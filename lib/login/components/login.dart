@@ -24,100 +24,155 @@ class _LoginPageState extends State<LoginPage> {
         color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.all(15),
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 60,
-              ),
-              Row(
-                children: [
-                  const SizedBox(
-                    width: 8,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 60,
+                ),
+                Row(
+                  children: [
+                    const SizedBox(
+                      width: 8,
+                    ),
+                    Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(image: loginbeck),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                const Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    'Welocome Back,',
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   ),
-                  Container(
-                    height: 150,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(image: loginbeck),
+                ),
+                const Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    'Make it work,make it right,make it fast.',
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                const TextField(
+                  cursorColor: Colors.black,
+                  decoration: InputDecoration(
+                    hintText: 'E-Mail',
+                    border: OutlineInputBorder(),
+                    // hoverColor: Colors.green,
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black)),
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black)),
+                    prefixIcon: Icon(Icons.person_outline),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextField(
+                  cursorColor: Colors.black,
+                  obscureText: boolpass,
+                  decoration: InputDecoration(
+                    hintText: 'Password',
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black)),
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black)),
+                    border: OutlineInputBorder(),
+                    // hoverColor: Colors.green,
+                    prefixIcon: Icon(Icons.fingerprint),
+                    suffixIcon: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          if (boolpass == true) {
+                            boolpass = false;
+                          } else {
+                            boolpass = true;
+                          }
+                        });
+                      },
+                      child: Icon(Icons.remove_red_eye),
                     ),
                   ),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              const Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  'Welocome Back,',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
-              ),
-              const Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  'Make it work,make it right,make it fast.',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                SizedBox(
+                  height: 30,
                 ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              const TextField(
-                cursorColor: Colors.black,
-                decoration: InputDecoration(
-                  hintText: 'E-Mail',
-                  border: OutlineInputBorder(),
-                  // hoverColor: Colors.green,
-                  enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black)),
-                  focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black)),
-                  prefixIcon: Icon(Icons.person_outline),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              TextField(
-                cursorColor: Colors.black,
-                obscureText: boolpass,
-                decoration: InputDecoration(
-                  hintText: 'Password',
-                  focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black)),
-                  enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black)),
-                  border: OutlineInputBorder(),
-                  // hoverColor: Colors.green,
-                  prefixIcon: Icon(Icons.fingerprint),
-                  suffixIcon: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        if (boolpass == true) {
-                          boolpass = false;
-                        } else {
-                          boolpass = true;
-                        }
-                      });
-                    },
-                    child: Icon(Icons.remove_red_eye),
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Text(
+                    'Forgot Password?',
+                    style: TextStyle(
+                        color: Colors.blue, fontWeight: FontWeight.bold),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Align(
-                alignment: Alignment.topRight,
-                child: Text(
-                  'Forgot Password?',
-                  style: TextStyle(
-                      color: Colors.blue, fontWeight: FontWeight.bold),
+                SizedBox(
+                  height: 20,
                 ),
-              ),
-              loginButton(boolck: false)
-            ],
+                Container(
+                  height: 60,
+                  width: 450,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black),
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
+                    color: Colors.black,
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    'LOGIN',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18),
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  'OR',
+                  style: TextStyle(fontSize: 20),
+                ),
+                Container(
+                  height: 60,
+                  width: 450,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black),
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
+                    color: Colors.white,
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    'Sign-In with Google',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20,),
+                Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(text: "Don't have an Account? ",style: TextStyle(fontWeight: FontWeight.bold)),
+                      TextSpan(text: "Signup",style: TextStyle(color: Colors.blue)),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
