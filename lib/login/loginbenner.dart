@@ -58,20 +58,7 @@ class _LoginhomeState extends State<Loginhome> {
                   onTap: () {
                     Navigator.of(context).pushNamed('/login');
                   },
-                  child: Container(
-                    height: 45,
-                    width: 130,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black),
-                      borderRadius: const BorderRadius.all(Radius.circular(5)),
-                      // color: Colors.black
-                    ),
-                    alignment: Alignment.center,
-                    child: const Text(
-                      'LOGIN',
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-                  ),
+                  child: loginButton(boolck: true),
                 ),
                 const SizedBox(
                   width: 15,
@@ -98,4 +85,22 @@ class _LoginhomeState extends State<Loginhome> {
       ),
     );
   }
+
+
+}
+Widget loginButton({required bool boolck}) {
+  return Container(
+    height: 45,
+    width: 130,
+    decoration: BoxDecoration(
+      border: Border.all(color: Colors.black),
+      borderRadius: BorderRadius.all(Radius.circular(5)),
+      color: (boolck==true)?const Color(0xff0FFE401):Colors.black,
+    ),
+    alignment: Alignment.center,
+    child: Text(
+      'LOGIN',
+      style: TextStyle(color: (boolck==true)?Colors.black:Colors.white,fontWeight: FontWeight.bold, fontSize: 18),
+    ),
+  );
 }

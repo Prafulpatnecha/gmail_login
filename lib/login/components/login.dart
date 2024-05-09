@@ -1,5 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gmail_login/login/loginbenner.dart';
 import 'package:gmail_login/utils/image.dart';
+
+import '../../utils/globle.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -10,8 +15,8 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    double h=MediaQuery.of(context).size.height;
-    double w=MediaQuery.of(context).size.width;
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
         height: h,
@@ -21,36 +26,97 @@ class _LoginPageState extends State<LoginPage> {
           padding: const EdgeInsets.all(15),
           child: Column(
             children: [
-              SizedBox(height: 60,),
+              const SizedBox(
+                height: 60,
+              ),
               Row(
                 children: [
-                  SizedBox(width: 15,),
+                  const SizedBox(
+                    width: 8,
+                  ),
                   Container(
                     height: 150,
                     width: 150,
                     decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: loginbeck
-                      ),
+                      image: DecorationImage(image: loginbeck),
                     ),
                   ),
                 ],
               ),
-              ListTile(
-                title: Text('Welocome Back,',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+              SizedBox(
+                height: 10,
               ),
-              ListTile(
-                title: Text('Make it work,make it right,make it fast.',style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,height: -3),),
+              const Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  'Welocome Back,',
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                ),
               ),
-              TextField(
+              const Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  'Make it work,make it right,make it fast.',
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              const TextField(
                 cursorColor: Colors.black,
                 decoration: InputDecoration(
                   hintText: 'E-Mail',
                   border: OutlineInputBorder(),
                   // hoverColor: Colors.green,
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black)),
                   prefixIcon: Icon(Icons.person_outline),
                 ),
               ),
+              const SizedBox(
+                height: 20,
+              ),
+              TextField(
+                cursorColor: Colors.black,
+                obscureText: boolpass,
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black)),
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black)),
+                  border: OutlineInputBorder(),
+                  // hoverColor: Colors.green,
+                  prefixIcon: Icon(Icons.fingerprint),
+                  suffixIcon: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        if (boolpass == true) {
+                          boolpass = false;
+                        } else {
+                          boolpass = true;
+                        }
+                      });
+                    },
+                    child: Icon(Icons.remove_red_eye),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Align(
+                alignment: Alignment.topRight,
+                child: Text(
+                  'Forgot Password?',
+                  style: TextStyle(
+                      color: Colors.blue, fontWeight: FontWeight.bold),
+                ),
+              ),
+              loginButton(boolck: false)
             ],
           ),
         ),
