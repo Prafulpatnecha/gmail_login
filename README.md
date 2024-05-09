@@ -16,7 +16,9 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 ![untitled](https://github.com/Prafulpatnecha/gmail_login/assets/144161200/c098765f-be1a-4c23-8ccf-f6573c454409)
 
-
+<video autoplay loop style="width:100%; height: auto; position:absolute; z-index: -1;">
+<source src="https://github.com/Prafulpatnecha/gmail_login/assets/144161200/c098765f-be1a-4c23-8ccf-f6573c454409" type="video/mp4" />
+</video>
 <h2>➡️ </h2>
 <hr>
 <p>
