@@ -79,14 +79,13 @@ class _LoginhomeState extends State<Loginhome> {
                 ),
               ],
             ),
-            const SizedBox(height: 30,)
+            const SizedBox(height: 30,),
+
           ],
         ),
       ),
     );
   }
-
-
 }
 Widget loginButton({required bool boolck}) {
   return Container(

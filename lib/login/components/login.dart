@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gmail_login/login/loginbenner.dart';
 import 'package:gmail_login/utils/image.dart';
 
 import '../../utils/globle.dart';
@@ -44,13 +42,13 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 const Align(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    'Welocome Back,',
+                    'Welcome Back,',
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -61,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 const TextField(
@@ -85,13 +83,13 @@ class _LoginPageState extends State<LoginPage> {
                   obscureText: boolpass,
                   decoration: InputDecoration(
                     hintText: 'Password',
-                    focusedBorder: OutlineInputBorder(
+                    focusedBorder: const OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.black)),
-                    enabledBorder: OutlineInputBorder(
+                    enabledBorder: const OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.black)),
-                    border: OutlineInputBorder(),
+                    border: const OutlineInputBorder(),
                     // hoverColor: Colors.green,
-                    prefixIcon: Icon(Icons.fingerprint),
+                    prefixIcon: const Icon(Icons.fingerprint),
                     suffixIcon: GestureDetector(
                       onTap: () {
                         setState(() {
@@ -102,14 +100,14 @@ class _LoginPageState extends State<LoginPage> {
                           }
                         });
                       },
-                      child: Icon(Icons.remove_red_eye),
+                      child: (boolpass==true)?const Icon(Icons.remove_red_eye):const Icon(Icons.visibility_off),
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
-                Align(
+                const Align(
                   alignment: Alignment.topRight,
                   child: Text(
                     'Forgot Password?',
@@ -117,7 +115,7 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.blue, fontWeight: FontWeight.bold),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Container(
@@ -125,11 +123,11 @@ class _LoginPageState extends State<LoginPage> {
                   width: 450,
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.black),
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
+                    borderRadius: const BorderRadius.all(Radius.circular(5)),
                     color: Colors.black,
                   ),
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     'LOGIN',
                     style: TextStyle(
                         color: Colors.white,
@@ -137,10 +135,10 @@ class _LoginPageState extends State<LoginPage> {
                         fontSize: 18),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   'OR',
                   style: TextStyle(fontSize: 20),
                 ),
@@ -149,21 +147,35 @@ class _LoginPageState extends State<LoginPage> {
                   width: 450,
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.black),
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
+                    borderRadius: const BorderRadius.all(Radius.circular(5)),
                     color: Colors.white,
                   ),
                   alignment: Alignment.center,
-                  child: Text(
-                    'Sign-In with Google',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: 50,
+                        width: 50,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/image/google.png'),
+                          ),
+                        ),
+                      ),
+                      const Text(
+                        'Sign-In with Google',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(height: 20,),
-                Text.rich(
+                const SizedBox(height: 20,),
+                const Text.rich(
                   TextSpan(
                     children: [
                       TextSpan(text: "Don't have an Account? ",style: TextStyle(fontWeight: FontWeight.bold)),
