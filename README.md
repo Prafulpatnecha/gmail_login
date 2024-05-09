@@ -14,10 +14,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
-![untitled](https://github.com/Prafulpatnecha/gmail_login/assets/144161200/c098765f-be1a-4c23-8ccf-f6573c454409)
 
 <video autoplay loop style="width:100%; height: auto; position:absolute; z-index: -1;">
-<source src="https://github.com/Prafulpatnecha/gmail_login/assets/144161200/c098765f-be1a-4c23-8ccf-f6573c454409" type="video/gif" />
+<source src="" type="video/gif" />
 </video>
 <h2>➡️ </h2>
 <hr>
@@ -28,3 +27,7 @@ samples, guidance on mobile development, and a full API reference.
 </a>
 </p>
 <hr>
+
+
+https://github.com/Prafulpatnecha/gmail_login/assets/144161200/5ad8cef4-53ba-4761-910a-a4bed6334b3e
+
